@@ -1,0 +1,8 @@
+[phases.install]
+cmds = ["npm install", "cd ../frontend && npm install && cd ../backend"]
+
+[phases.build]
+cmds = ["cd ../frontend && npm run build && cd ../backend && npx prisma generate && npx tsc && npx prisma db push"]
+
+[start]
+cmd = "node dist/index.js"
